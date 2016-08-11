@@ -4,7 +4,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-public class SpringReceiver {
+public class SpringQueueSender {
 	public static void main(String[] args) throws InterruptedException {
 		AbstractApplicationContext ctx = new ClassPathXmlApplicationContext(
 				"rabbitmq.xml");

@@ -15,11 +15,10 @@
     <rabbit:connection-factory id="connectionFactory" host="10.185.240.142" />
     <rabbit:admin connection-factory="connectionFactory" />
     
-    <rabbit:queue name="queue_one" id="queue_one" durable="true" />
-<!--     <rabbit:queue id="queue_one" durable="true" auto-delete="false" exclusive="false" name="queue_one"/> -->
+    <rabbit:queue name="queue_one" id="queue_one" durable="true" auto-delete="false" exclusive="false" />
     <rabbit:direct-exchange name="my-mq-exchange" durable="true" auto-delete="false" id="my-mq-exchange">
         <rabbit:bindings>
-            <rabbit:binding queue="queue_one" key="queue_one_key" />
+            <rabbit:binding queue="queue_one" key="queue_one" />
         </rabbit:bindings>
     </rabbit:direct-exchange>
     <rabbit:template exchange="my-mq-exchange" id="amqpTemplate"  connection-factory="connectionFactory" />
